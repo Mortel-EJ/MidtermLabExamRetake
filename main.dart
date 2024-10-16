@@ -42,7 +42,7 @@ class _ExampleStaggeredAnimationsState extends State<ExampleStaggeredAnimations>
       // Set the vsync property to this, which is the SingleTickerProviderStateMixin
       vsync: this,
       // 11. Set the duration of the animation to 150 milliseconds
-      duration: const Duration(milliseconds: 150 * 1000),
+      duration: const Duration(milliseconds: 150),
     );
   }
   // Override the dispose method, which is called when the widget is removed from the tree
@@ -353,19 +353,19 @@ List<Widget> _buildListItems() {
             _itemSlideIntervals[i].transform(_staggeredController.value),
           );
           //33.  Calculate the opacity
-          final Opacity = animationPercent;
+          final opacity = animationPercent;
           // Calculate the slide distance
           final slideDistance = (1.0 - animationPercent) * 150;
           // 34.Return an Opacity widget
           return Opacity(
             // 35. Set the opacity of the Opacity widget
-            opacity: 100,//#
+            opacity: opacity,//#
             // 36. Set the child of the Opacity widget to a Transform widget
             child: Transform.translate(
               // Set the offset of the Transform widget
               offset: Offset(slideDistance, 0),
               // 37. Set the child of the Transform widget
-              child: Transform,
+              child: child,
             ),
           );
         },
